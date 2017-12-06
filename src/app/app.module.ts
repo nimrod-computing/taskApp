@@ -5,9 +5,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { environment } from '../environments/environment';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
 @NgModule({
@@ -17,10 +14,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    AngularFireModule,
-    AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-fs' )
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
