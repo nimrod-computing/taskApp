@@ -10,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+    showMenu = false;
+
+    onToggleMenu() {
+        this.showMenu = !this.showMenu;
+        console.log(this.showMenu);
+    }
 }

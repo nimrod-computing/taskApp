@@ -7,3 +7,8 @@
 td.delete-cell {
     width: 20px;
 }
+
+
+.show-menu {
+    display: block;
+}
