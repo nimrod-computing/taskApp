@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.delete-cell .glyphicon {
+    color: red;
+}
+
+td.delete-cell {
+    width: 20px;
+}

@@ -1,18 +1,31 @@
+<h2>My Tasks</h2>
+
 <div class="row">
   <div class="col-12">
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
           <th>Title</th>
           <th>Description</th>
+          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let task of tasks">
           <td>{{ task.title }}</td>
           <td>{{ task.description }}</td>
-          </tr>
+          <td class=" delete-cell">
+            <form role="form">
+              <button type="submit" class="btn btn-link" (click)="delete($event, task)">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </button>
+            </form>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
+
+  <button class="btn btn-primary" (click)="add()">&nbsp;Add&nbsp;</button>
+
 </div>

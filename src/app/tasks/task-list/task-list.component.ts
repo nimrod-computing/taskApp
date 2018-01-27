@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Task } from './../task.model';
+import { TasksService } from 'app/tasks/tasks.service';
 
 @Component({
-  selector: 'app-task-list',
-  templateUrl: './task-list.component.html'
+    selector: 'app-task-list',
+    templateUrl: './task-list.component.html'
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent {
 
-  constructor() { }
+    get tasks(): Task[] { return this.tasksService.tasks; }
 
-  ngOnInit() {
-  }
+    constructor(private router: Router, private tasksService: TasksService) {}
 
-  get tasks() {
-    return [
-      { title: 'Task 1', description: 'This is task 1'},
-      { title: 'Task 2', description: 'This is task 2'}
-    ]
-  }
+    add() {
+        this.router.navigate(['tasks/add']);
+    }
 
+    delete(event: Event, task: Task) {
+        this.tasksService.delete(task);
+    }
 }
