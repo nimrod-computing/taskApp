@@ -11,8 +11,6 @@ import { TasksService } from 'app/tasks/tasks.service';
 export class AddTaskComponent implements OnInit {
 
     model: Task = new Task();
-    JSON = JSON;
-    console = console;
 
     constructor(private router: Router, private tasksService: TasksService) {}
 

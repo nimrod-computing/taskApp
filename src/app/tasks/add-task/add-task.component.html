@@ -5,7 +5,6 @@
       <label for="title" class="control-label">Title</label>
       <input #title="ngModel" required type="text" class="form-control" id="title" placeholder="Enter title" [(ngModel)]="model.title" name="title">
       <div *ngIf="title.invalid && title.touched" class="alert alert-danger" role="alert">Required</div>
-      {{ JSON.stringify({ invalid: title.invalid, dirty: title.dirty }) }}
     </div>
     <div class="form-group" [class.has-error]="description.invalid && description.touched">
       <label for="description" class="control-label">Description</label>
@@ -17,15 +16,3 @@
     &nbsp;
     <button class="btn btn-secondary" (click)="onCancel($event)">Cancel</button>
   </form>
-
-  <h3>Debug (remove for production)</h3>
-
-  Form:
-  <pre>
-{{ JSON.stringify({ value: frm.form.value, dirty: frm.dirty, disabled: frm.disabled, enabled: frm.enabled, invalid: frm.invalid, errors: frm.errors, status: frm.status, touched: frm.touched, untouched: frm.untouched, valid: frm.valid }) }}
-  </pre>
-
-  Model:
-  <pre>
-{{ JSON.stringify(model) }}
-  </pre>
